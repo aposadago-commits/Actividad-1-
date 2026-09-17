@@ -30,3 +30,101 @@ if __name__ == "__main__":
     edjuan_input = float(input("Ingrese la edad de Juan: "))
     familia = Familia(edjuan_input)
     familia.mostrar_edades()
+
+
+
+#Ejercicio nro 4
+class CalculoSeguimiento:
+
+    def __init__(self, suma=0, x=20, y=40):
+        self.suma = suma
+        self.x = x
+        self.y = y
+
+    def ejecutar_seguimiento(self):
+        self.suma = self.suma + self.x
+        self.x = self.x + (self.y**2)
+        self.suma = self.suma + (self.x / self.y)
+
+    def mostrar_resultado(self):
+        print(f"EL VALOR DE LA SUMA ES: {self.suma}")
+
+
+if __name__ == "__main__":
+    calculo = CalculoSeguimiento()
+    calculo.ejecutar_seguimiento()
+    calculo.mostrar_resultado()
+
+#Ejercicio nro 12
+class SalarioEmpleado:
+
+    def __init__(self, horas_trabajadas=48, valor_hora=5000, porcentaje_retencion=12.5):
+        self.horas_trabajadas = horas_trabajadas
+        self.valor_hora = valor_hora
+        self.porcentaje_retencion = porcentaje_retencion
+
+    def calcular_salario_bruto(self):
+        return self.horas_trabajadas * self.valor_hora
+
+    def calcular_retencion(self):
+        return self.calcular_salario_bruto() * (self.porcentaje_retencion / 100)
+
+    def calcular_salario_neto(self):
+        return self.calcular_salario_bruto() - self.calcular_retencion()
+
+    def mostrar_resultados(self):
+        print(f"Salario Bruto: ${self.calcular_salario_bruto():,.2f}")
+        print(f"Retención en la Fuente: ${self.calcular_retencion():,.2f}")
+        print(f"Salario Neto: ${self.calcular_salario_neto():,.2f}")
+
+
+if __name__ == "__main__":
+    empleado = SalarioEmpleado()
+    empleado.mostrar_resultados()
+
+#Ejercicio nro 14
+class PotenciaNumero:
+
+    def __init__(self, numero):
+        self.numero = numero
+
+    def calcular_cuadrado(self):
+        return self.numero**2
+
+    def calcular_cubo(self):
+        return self.numero**3
+
+    def mostrar_resultados(self):
+        print(f"El cuadrado de {self.numero} es: {self.calcular_cuadrado()}")
+        print(f"El cubo de {self.numero} es: {self.calcular_cubo()}")
+
+
+if __name__ == "__main__":
+    num_input = float(input("Ingrese un número: "))
+    potencia = PotenciaNumero(num_input)
+    potencia.mostrar_resultados()
+
+#Ejercicio nro 17
+import math
+
+
+class Circulo:
+
+    def __init__(self, radio):
+        self.radio = radio
+
+    def calcular_area(self):
+        return math.pi * (self.radio**2)
+
+    def calcular_longitud(self):
+        return 2 * math.pi * self.radio
+
+    def mostrar_resultados(self):
+        print(f"Área del círculo: {self.calcular_area():.2f}")
+        print(f"Longitud de la circunferencia: {self.calcular_longitud():.2f}")
+
+
+if __name__ == "__main__":
+    radio_input = float(input("Ingrese el radio del círculo: "))
+    circulo = Circulo(radio_input)
+    circulo.mostrar_resultados()
