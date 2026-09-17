@@ -1,0 +1,32 @@
+#Ejercicio nro 4
+class Familia:
+
+    def __init__(self, edjuan):
+        self.edjuan = edjuan
+
+    def calcular_edad_alberto(self):
+        return 2 * self.edjuan / 3
+
+    def calcular_edad_ana(self):
+        return 4 * self.edjuan / 3
+
+    def calcular_edad_mama(self):
+        return (
+            self.edjuan + self.calcular_edad_alberto() + self.calcular_edad_ana()
+        )
+
+    def mostrar_edades(self):
+        alberto = int(self.calcular_edad_alberto())
+        juan = int(self.edjuan)
+        ana = int(self.calcular_edad_ana())
+        mama = int(self.calcular_edad_mama())
+
+        print(
+            f"LAS EDADES SON: ALBERTO: {alberto} JUAN: {juan} ANA: {ana} MAMA: {mama}"
+        )
+
+
+if __name__ == "__main__":
+    edjuan_input = float(input("Ingrese la edad de Juan: "))
+    familia = Familia(edjuan_input)
+    familia.mostrar_edades()
